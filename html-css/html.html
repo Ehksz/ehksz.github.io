@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/quasar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pure-min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/spaces.css" />
+    <link rel="stylesheet" type="text/css" href="../css/typo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/devices.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/gh-fork-ribbon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/nord-dark.css" />
+    <link rel="stylesheet" type="text/css" href="../css/nord-light.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-nord.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bg-nord.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bg-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/material-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../css/abs-layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/border-layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/text-rect.css" />
+    <link rel="stylesheet" type="text/css" href="../css/text-circle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/card.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lines.css" />
+    <link rel="stylesheet" type="text/css" href="../css/filters.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: typo, typo-selection
+
+---
+
+count: false
+class: center, middle, nord-dark
+
+# HTML
+Media Computation Skills Lab
+
+---
+class: nord-dark
+
+## HTML
+The purpose of HTML is to apply meaning to the document.  
+**NOT presentation**. <small>Think blueprint or outline.</small>  
+  
+Throughout this slide you'll learn about: HTML **content**, **tags**, **attributes**, **elements**, and other HTML basics.
+
+Tags that we'll learn:  
+`html` `title` `p`  `strong`  `em`  `h1..h6`  `ul`  `ol`  `li`  `a`  `img`  `table`  `tr`  `td`  `inpu`  `textarea` `select` and `style`
+---
+class: nord-dark
+### Tags  
+Tags surround content and apply meaning to it.
+
+Tags start with `<` and end with `>`  
+Most tags have a closing counterpart that starts with`</` and end with `>`  
+The **closing tag** signals the end of the content.
+
+**Example** 
+`<html> ...content </html>`  
+---
+class: nord-dark
+## HTML 
+
+### Keywords:
+**DOCTYPE** - Tells the browser the flavor of html we're writing. (HTML5)  
+**Attributes** - Bits of extra information that modify the original tag. Attributes are added within the tag.  
+```html
+  <img src="www.google.com/img.jpg"/>
+  src is the attribute and the value is the url to the image. 
+```
+**Element** - Tag, attributes, content combined.
+
+---
+class: nord-dark
+### Some tags...
+
+`html` - Tells the browser that what we're writing is an HTML document. Everything within the html **opening** and **closing tags** are considered the **HTML Document**  
+`body` - Signifies the main content of the document. Everything within this tag appears **(renders)** within the browser window!  
+`head` - Comes **before** the `body` tag and includes meta information about the document.  
+Elements within the `head` tag do not render on the page.  
+`title` - Is a tag that outputs the title/name of the document on the window or tab.
+
+EXERCISE: In lab-html-css create `myfirstpage.html` using `touch`:  
+.font-sm[<small>This will open the editor with `myfirstpage.html` active.</small>]
+```bash
+$ cd lab-05-html  
+$ touch myfirstpage.html  
+$ code myfirstpage.html  
+```
+---
+class: nord-dark
+
+### Exercise cont...
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YOUR TITLE HERE</title>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+Save the document by pressing `CTRL + S` on Windows or `CMD + S` on Mac.
+
+Click on the explorer icon [![](../static/explorer.png)] and right click on the file. Select Reveal in Explorer (Windows) or Reveal in Finder (Mac). Once the new window opens double click on the file to open it within your default browser! What do you see?
+
+---
+class: nord-dark
+
+### More tags, Inline too!
+.font-m[
+`p` - Used to denote paragraphs within the document. <em>text within p tags do not break.</em>  
+`em` - Used to denote emphasis, can be used within `p` tags.  
+`strong` - Used to denote bold, can be used within `p` tags.  
+`br` - Adds line breaks, can be used within `p` tags.
+`h1...h6` - Headings `h1`, `h2`, `h3`, `h4`, `h5`, `h6` each one is smaller than the previous.]  
+
+```html
+<p>
+  This is a paragraph.<em>Within this paragraph there is emphasis!</em>
+</p>
+```
+
+.font-m[**EXERCISE**:
+- Find 3 paragraphs online. Add them to your document `Remember to wrap each paragraph in a p tag!` add headings too!
+- Find 6 words and wrap them in either `strong` or `em`.
+- Play around with the `br` tag and see how many breaks you can make.
+- Save your file and post the screen shot of your page on slack - showoff.]
+
+---
+
+class: nord-dark
+
+### Lists!
+
+`ol` - Denotes an ordered list.  
+`ul` - Denotes an **un**ordered list.  
+`li` - List items, these are the individual items added within an `ul` or `ol`.  
+
+```html
+<ul>
+  <li>This is list item 1</li>
+  <li>This is list item 2</li>
+  <li>This is list item 3</li>
+</ul>
+```
+
+.font-sm[**EXERCISE**:
+- Create an ordered list describing how to cook your favorite meal.
+- Create an unordered list describing some of your favorite things to do.
+- Save your file and post the screen shot of your page on slack - showoff.]
+
+
+---
+class: nord-dark
+### Links and images
+
+`a` - An anchor tag. It links to other pages within or outside the document.
+`img` displays an image with the document.
+```html
+<a href="www.google.com">This links to google.com</a>
+<img src="https://assets.entrepreneur.com/content/3x2/2000/20180703190744-rollsafe-meme.jpeg" />
+```
+<small>NOTE the attributes! `href` and `src` as well as the self closing `/>` tag!</small>
+
+.font-sm[**EXERCISE**:
+- Find a meme online and get its image url. Use that url and add an img tag to your document.
+- Link to somewhere on the internet get creative!
+- Save your file and post the screen shot of your page on slack - showoff.]
+
+
+---
+class: nord-dark
+### Submit this to github!
+
+```bash
+$ git add -all
+$ git commit -m "Completed Lab Part 1"
+$ git push
+```
+
+Check and make sure you're repository is updated!
+
+
+    </textarea>
+
+    <script src="../js/remark.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/quasar.umd.min.js"></script>
+    <script src="../js/mermaid.min.js"></script>
+    <script id="MathJax-script" async src="../js/tex-mml-chtml.js"></script>
+    <script>
+      // 预处理：去掉每行开头的空格，否则超过2层锁紧的类会导致解析出BUG
+      var targetTextArea = document.getElementById("source");
+      var targetText = targetTextArea.innerHTML.replace(
+        /```[^`]+```/gm,
+        (match, index, input) => {
+          return match.replace(/[ ]/gm, "\u3000");
+        }
+      );
+      var lines = targetText.split("\n");
+
+      targetTextArea.innerHTML = lines
+        .map((line) => line.replace(/^(?![ ]+[\-|0-9])[ ]+/, ""))
+        .map((line) => line.replace(/\u3000/g, " "))
+        .join("\n");
+
+      var slideshow = remark.create({
+        ratio: "16:9", // window ratio
+        // arta, ascetic, dark, default, far, github, googlecode, idea,
+        // ir-black, magula, monokai, rainbow, solarized-dark, solarized-light,
+        // sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright,
+        // tomorrow-night, tomorrow-night-eighties, vs, zenburn.
+        highlightStyle: "github",
+        highlightLines: true,
+        countIncrementalSlides: false, // whether the incremental content count as one page
+        //slideNumberFormat: "", // If this parameter is set to "", the page number is not displayed
+        navigation: {
+          scroll: false, // Page turning with mouse wheel is allowed
+          touch: true, // Is it allowed to scroll back and forth by clicking on the left or right side of the screen
+          click: false, // Allow the mouse to click on the left or right side of the screen to turn back and forth
+        },
+      });
+
+      // 初始化 VUE
+      for (var el of document.querySelectorAll(".vue")) {
+        new Vue({
+          el: el,
+        });
+      }
+
+      // 初始化可点击预览的卡片
+      var preview_win_cards = document.querySelectorAll(".preview-win");
+      for (var card of preview_win_cards) {
+        ((clickedCard) => {
+          clickedCard.addEventListener("click", (e) => {
+            var img = clickedCard.querySelector("img");
+            if (img) {
+              window.open(img.src);
+            }
+          });
+        })(card);
+      }
+
+      // 背景色变化兼容 F11 全屏
+      function isFullScreen() {
+        return (
+          window.fullScreen ||
+          (window.innerWidth == screen.width &&
+            window.innerHeight == screen.height)
+        );
+      }
+
+      window.addEventListener("resize", () => {
+        if (isFullScreen()) {
+          document.body.style["background-color"] = "#000";
+        } else {
+          document.body.style["background-color"] = "#d7d8d2";
+        }
+      });
+
+      // 初始化 mermaid
+      mermaid.mermaidAPI.initialize({
+        startOnLoad: false,
+        theme: "forest",
+        themeCSS:
+          ".tick>text { font-size:26px; }  .taskTextOutsideRight,.taskTextOutsideLeft { font-size:20px; } .titleText {font-size:30px;} .sectionTitle {font-size:20px;}",
+        gantt: {
+          fontSize: 26,
+          barHeight: 30,
+          useMaxWidth: false,
+        },
+      });
+
+      var mermaidCmps = document.querySelectorAll(".mermaid");
+      for (var i = 0; i < mermaidCmps.length; i++) {
+        var mermaidCmp = mermaidCmps[i];
+        var insertSvg = function (svgCode, bindFunctions) {
+          mermaidCmp.innerHTML = svgCode;
+        };
+
+        var graphDefinition = "";
+        let pCmps = mermaidCmp.querySelectorAll("pre");
+        for (var pCmp of pCmps) {
+          graphDefinition += pCmp.textContent.replace(/\\n/g, "<br/>");
+        }
+
+        var graph = mermaid.mermaidAPI.render(
+          "graphDiv" + i,
+          graphDefinition,
+          insertSvg
+        );
+      }
+
+      // LaTeX
+      MathJax = {
+        loader: {
+          load: ["input/tex-base", "[tex]/newcommand", "output/chtml"],
+        },
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+            "annotation",
+            "annotation-xml",
+          ],
+          ignoreHtmlClass: "tex2jax_ignore",
+        },
+      };
+    </script>
+  </body>
+</html>

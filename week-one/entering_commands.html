@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entering Commands</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/quasar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pure-min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/spaces.css" />
+    <link rel="stylesheet" type="text/css" href="../css/typo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/devices.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/gh-fork-ribbon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/nord-dark.css" />
+    <link rel="stylesheet" type="text/css" href="../css/nord-light.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-nord.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bg-nord.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bg-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/material-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../css/abs-layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/border-layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/text-rect.css" />
+    <link rel="stylesheet" type="text/css" href="../css/text-circle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/card.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lines.css" />
+    <link rel="stylesheet" type="text/css" href="../css/filters.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: typo, typo-selection
+
+---
+
+count: false
+class: center, middle, nord-dark
+
+# Entering Commands
+Media Computation Skills Lab
+
+---
+class: nord-dark
+
+## Entering a command
+Once you have VSCode Integrated Terminal Open `(ctrl + esc)` you'll see a string of characters that end with a `$` sign
+This is called the **command prompt**.
+Looks something like this.
+```bash
+ent:~ professor$
+```
+Whenever you see a line in these slides prefixed with `$` that means were typing something in the **prompt**.
+
+What we type in the prompt (After the `$` sign) is what is called a **command**
+
+Commands that we'll use in this class include:  
+`ls`  `cd`  `pwd`  `mkdir`  `rmdir`  `touch`  `cp`  `mv`  `head`  `tail`  `cat`  `curl`  `grep`  `ps`  `env`  `chmod`  `history`  and `chown`
+---
+class: nord-dark
+## Executing a Command
+
+Go ahead. Try typing the `ls` **command** in the **prompt**. What output does it give you?
+
+You should see something like this:
+
+```bash
+ent:~ professor$ ls          
+Code  demo.yml  folder1  folder2  newText.tx  newfile.txt  newsound.mp3  picture.jpg  pizza
+```
+.font-xs[<small>What is listed will be different for you. However, you **should** get a **list** of files. Otherwise, that directory is empty.</small>]
+
+You just ran your very first **command**. As you might have guessed. `ls` stands for list.
+Commands are usually verbs and they tell the computer to **do** something.
+---
+class: nord-dark
+## Context & The File System
+
+A **File system** is structure that holds files. Certain operating systems have different structures. The one we'll focus on in this class is the **linux** file system. 
+Below is what it looks like, roughly:  
+.font-m[**Whenever we open up a terminal we are always opening it somewhere in this filesystem**]
+.float-left.width-100.pt-xxs.pr-xs[![](../static/filesystem.png)]
+
+<small>NOTE: Mac filesystem is very similar!</small>  
+.font-m[The **context** of that opened terminal will always be one of these folders.]
+
+---
+class: nord-dark
+## Context cont...
+
+This means that we **must** pay attention to where we run our **commands**, for instance:
+We would not want to use the `rm` (removes files) command on the `root` folder. Otherwise we might remove very important files!
+
+A common mistake students make is not knowing where they are in the system. For that we have the `pwd` command.
+
+`pwd` stands for **print working directory** and does exactly that. Prints on the the terminal where you currently are. Try it!
+
+```bash
+ent:~ professor$ pwd
+/home/professor
+```
+
+Does that path look familiar?
+---
+class: nord-dark
+
+# Using Arguments
+
+**Commands** take **arguments**. Arguments are what the command acts upon. For instance, in our previous example we used `ls`, alone `ls` lists what's
+in the current directory (or **context**). It does take an argument try:
+
+```bash
+ent:~ professor$ ls Documents
+```
+What output did you receive?  
+
+--
+
+You should have received a list of files that exist *in* that `Documents` folder. What you just passed in was an argument! 
+
+--
+Commands have may take 0 or more arguments. To get in-depth information on commands used
+```bash
+ent:~ professor$ man ls
+```
+Substitute ls for the command you'd like more information on.
+
+
+---
+class: nord-dark
+
+## Using Flags
+
+Flags modify **commands** in very specific ways. Flags can be used to augment the base command.
+For instance: 
+- What if you wanted to list all the files in a folder by time?
+- What if you wanted to know the type of files in the folder?
+- What if you needed it ordered alphabetically?
+- What if you need to know who owns the files?
+- What if you wanted to see hidden files?
+
+To list files in a folder by time you could do this:
+
+```bash
+ent:~ professor$ ls -l Documents
+```
+.font-xs[**That is not a one, but the letter L**]
+
+---
+
+class: nord-dark
+
+## Navigating the Terminal.
+
+1. Pressing `tab` will auto-complete paths or names if they exist ie: `ls Desk` -> `ls Desktop`
+2. If there are multiple matches ie: `ls D` pressing tab twice  will bring up the options further typing will filter these options.
+3. ↑ and ↓ arrows allow you to go back and forth between previous commands. (So you don't have to keep rewrite it)
+
+---
+class: nord-dark
+# Errors
+
+If you type an command incorrectly it will throw an error.
+
+Type:
+```bash
+$ l
+bash: command not found: l
+```
+
+If you give **commands** incorrect arguments you will also get an error for instance:
+
+```bash
+$ ls directorythatdoesntexist
+ls: cannot access 'directorythatdoesntexist': No such file or directory
+```
+
+Make sure to read the errors before asking for help! This is what developers do :)
+
+    </textarea>
+
+    <script src="../js/remark.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/quasar.umd.min.js"></script>
+    <script src="../js/mermaid.min.js"></script>
+    <script id="MathJax-script" async src="../js/tex-mml-chtml.js"></script>
+    <script>
+      // 预处理：去掉每行开头的空格，否则超过2层锁紧的类会导致解析出BUG
+      var targetTextArea = document.getElementById("source");
+      var targetText = targetTextArea.innerHTML.replace(
+        /```[^`]+```/gm,
+        (match, index, input) => {
+          return match.replace(/[ ]/gm, "\u3000");
+        }
+      );
+      var lines = targetText.split("\n");
+
+      targetTextArea.innerHTML = lines
+        .map((line) => line.replace(/^(?![ ]+[\-|0-9])[ ]+/, ""))
+        .map((line) => line.replace(/\u3000/g, " "))
+        .join("\n");
+
+      var slideshow = remark.create({
+        ratio: "4:3", // window ratio
+        // arta, ascetic, dark, default, far, github, googlecode, idea,
+        // ir-black, magula, monokai, rainbow, solarized-dark, solarized-light,
+        // sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright,
+        // tomorrow-night, tomorrow-night-eighties, vs, zenburn.
+        highlightStyle: "github",
+        highlightLines: true,
+        countIncrementalSlides: false, // whether the incremental content count as one page
+        //slideNumberFormat: "", // If this parameter is set to "", the page number is not displayed
+        navigation: {
+          scroll: false, // Page turning with mouse wheel is allowed
+          touch: true, // Is it allowed to scroll back and forth by clicking on the left or right side of the screen
+          click: false, // Allow the mouse to click on the left or right side of the screen to turn back and forth
+        },
+      });
+
+      // 初始化 VUE
+      for (var el of document.querySelectorAll(".vue")) {
+        new Vue({
+          el: el,
+        });
+      }
+
+      // 初始化可点击预览的卡片
+      var preview_win_cards = document.querySelectorAll(".preview-win");
+      for (var card of preview_win_cards) {
+        ((clickedCard) => {
+          clickedCard.addEventListener("click", (e) => {
+            var img = clickedCard.querySelector("img");
+            if (img) {
+              window.open(img.src);
+            }
+          });
+        })(card);
+      }
+
+      // 背景色变化兼容 F11 全屏
+      function isFullScreen() {
+        return (
+          window.fullScreen ||
+          (window.innerWidth == screen.width &&
+            window.innerHeight == screen.height)
+        );
+      }
+
+      window.addEventListener("resize", () => {
+        if (isFullScreen()) {
+          document.body.style["background-color"] = "#000";
+        } else {
+          document.body.style["background-color"] = "#d7d8d2";
+        }
+      });
+
+      // 初始化 mermaid
+      mermaid.mermaidAPI.initialize({
+        startOnLoad: false,
+        theme: "forest",
+        themeCSS:
+          ".tick>text { font-size:26px; }  .taskTextOutsideRight,.taskTextOutsideLeft { font-size:20px; } .titleText {font-size:30px;} .sectionTitle {font-size:20px;}",
+        gantt: {
+          fontSize: 26,
+          barHeight: 30,
+          useMaxWidth: false,
+        },
+      });
+
+      var mermaidCmps = document.querySelectorAll(".mermaid");
+      for (var i = 0; i < mermaidCmps.length; i++) {
+        var mermaidCmp = mermaidCmps[i];
+        var insertSvg = function (svgCode, bindFunctions) {
+          mermaidCmp.innerHTML = svgCode;
+        };
+
+        var graphDefinition = "";
+        let pCmps = mermaidCmp.querySelectorAll("pre");
+        for (var pCmp of pCmps) {
+          graphDefinition += pCmp.textContent.replace(/\\n/g, "<br/>");
+        }
+
+        var graph = mermaid.mermaidAPI.render(
+          "graphDiv" + i,
+          graphDefinition,
+          insertSvg
+        );
+      }
+
+      // LaTeX
+      MathJax = {
+        loader: {
+          load: ["input/tex-base", "[tex]/newcommand", "output/chtml"],
+        },
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+            "annotation",
+            "annotation-xml",
+          ],
+          ignoreHtmlClass: "tex2jax_ignore",
+        },
+      };
+    </script>
+  </body>
+</html>
