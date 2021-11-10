@@ -107,7 +107,6 @@ class: nord-dark
 
 ---
 class: nord-dark
-
 ## Values, Types and Operators
 
 The most basic elements of a JavaScript program are:  
@@ -117,7 +116,6 @@ The most basic elements of a JavaScript program are:
 - Operators
 
 ---
-
 class: nord-dark
 
 ## Values
@@ -131,8 +129,9 @@ Values are just data.  Some examples of data we’ll see in JavaScript are:
  - **NaN** - not-a-number - results from a numeric operation that doesn’t give back a meaningful result… such as 0/0
  - **null/undefined** - <em>absence of a value</em>
 
----
-class: nord-dark
+ ---
+ class: nord-dark
+ 
 ### Values in Programs
 Some examples of values in programs include...  
 
@@ -140,24 +139,171 @@ Some examples of values in programs include...
 - “hello there”
 - To create values, just write them!
 
+---
+class: nord-dark
+
+
 ### Numbers
 
 - Unsurprisingly, numbers are just numbers
 - You can represent positive and negative whole numbers: 23, 42, -10
 - Decimals (with a period): 2.3, 4.2
 - No need for commas (e.g. 10000)
+
 ---
 class: nord-dark
-### Submit this to github!
 
-```bash
-$ git add -all
-$ git commit -m "Completed Lab Part 1"
-$ git push
+
+### Numeric Operators
+
+Binary arithmetic operators (Take two operands one on each side.)
+
+- **+ multiplication:** `5 + 5`
+- **- subtraction:** `10 - 5`
+- **/ division:** `10 / 10`
+- **% modulo:**  `50 % 10 // 0 10 % 3 // 1` 
+
+---
+class: nord-dark
+
+
+### Strings
+
+- Quoted text is considered a string.
+```javascript
+const string1 = 'This is a string.';
+const string 2 = "this is also a string";
 ```
 
-Check and make sure you're repository is updated!
+### Ooh a Gotcha!
+```javascript
+const string3 = ''; // Quotes without characters are still considered a string!
+```
 
+---
+class: nord-dark
+### Escape Characters.
+
+- Escape characters are special characters that tell the javascript interpreter to interpret the string differently.
+
+For instance:
+- How would we create a <strong>new line</strong>  in a string? 
+- How would we <strong>tab</strong> within a string?
+- What if we want to store a single <strong>quote</strong> within a single quoted string?
+
+---
+class: nord-dark
+
+### This is how...
+
+```javascript
+const tabbedString = 'This is a \t tabbed string.';
+const newLinedString = 'This \n causes a new line break!';
+const quotedQuote = '\'\' I have quotes in the string!';
+```
+The backslash is also an escape character... So how would we ESCAPE the escape character?
+
+---
+class: nord-dark
+### String Operators
+- **string concatenation** (**+**) is an operator that joins two strings!  
+
+```javascript 
+"Hi my name is...." + " John"; // Hi my name is John
+```
+
+
+---
+class: nord-dark
+###Expressions and Statements
+
+- A **program** is a sequence of statements that specify to a computer actions to perform.
+- A **statement** corresponds to a sentence… it’s a full instruction for the computer.
+- All **statements** end in a semicolon in JavaScript. (Mostly true.)
+- An expression is just a fragment of code that produces a value; it’s not a statement by itself.
+
+```javascript
+1 + 1 // Expression (No semicolon)
+1 + 1; // Statement 
+```
+---
+class: nord-dark
+### Functions!
+
+What’s a function? →
+
+- a **function** is a named sequence of statements that perform some useful action. (a program)
+- it can take inputs, and it can return values, but it doesn’t have to do either
+- to **call** (or execute) a function, just call it by name, with parentheses after (with an optional list of commas separated inputs within the parentheses)
+- the values passed to a function are called **arguments**
+- for example: `prompt(“What is your name?”)` is a function call
+
+---
+class: nord-dark
+### Built-in Functions:
+
+- `prompt(“some message”)` - asks the user for input and returns that value to your program! … takes a single argument, the message to display to a user (this usually requires the use of variables)
+- `console.log(“some message”)` - prints the argument that you pass to it… out to Chrome’s JavaScript console
+
+
+Let’s try these out. →
+
+---
+class: nord-dark
+
+### Variables
+
+- **Variables** are names that represent particular values:
+- We **store** values within a **variable**
+- **Variables** allow us to substitute a particular value with an alias.
+- It can be used anywhere a value would be used. 
+
+There are three ways to create a variable ->
+
+---
+class: nord-dark
+
+###Creating a variable!
+
+
+- The old way: 
+```javascript
+var someVariableName = 'Hi I\'m a string value stored in a variable'; // We don't use this anymore!
+// var is a security risk and can be overwritten.
+```
+- The new way: 
+```javascript
+let someVariableName = 'Hi I\'m a string value stored in a variable'; // That's more like it!
+// let is scoped! Less of a security risk and can also be overwritten.
+```
+- Oh but there's more! 
+```javascript
+const someVariable = 'Hi I\'m a string value stored in a variable that cannot be overwritten!'; 
+// const is scoped, but cannot be overwritten.
+```
+
+---
+class: nord-dark
+
+###Using a variable!
+
+- Remember variables can be used in place of a value!
+Consider this:
+
+```javascript
+let name = 'Jean';
+
+console.log('Hello ' + name + ' , how are you?');
+
+const creditCardNum = prompt('Whats your credit card number?');
+
+console.log('Your credit card number is: ' + creditCardNum);
+
+let firstNum = prompt('Give me a number to subract: ');
+let secondNum = prompt('Give me a another number.');
+
+console.log(firstNum + secondNum);
+```
 
     </textarea>
 
